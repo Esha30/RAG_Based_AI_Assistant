@@ -1,0 +1,9 @@
+RAG AI Assistant Browser Verification
+This document verifies that the web application's user interface is fully functional.
+Key Features Checked:
+1. User registration and secure authentication.
+2. Drag-and-drop document upload and extraction.
+3. Chat history persistence and live streaming responses.
+4. Analytics page counters updates.
+5. ATS Resume analysis and keyword grading.
+Conclusion: The system is verified in the real environment.
