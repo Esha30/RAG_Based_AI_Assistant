@@ -5,6 +5,7 @@ import os
 
 class Settings(BaseSettings):
     gemini_api_key: str = ""
+    gemini_model: str = "gemini-3.1-flash-lite"
     secret_key: str = "change-me-in-production"
     algorithm: str = "HS256"
     access_token_expire_minutes: int = 10080

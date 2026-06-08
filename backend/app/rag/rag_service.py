@@ -100,7 +100,7 @@ def ocr_pdf_with_gemini(file_path: str) -> List[Document]:
     """Use Gemini multimodal to OCR scanned PDF pages."""
     from pypdf import PdfReader
     reader = PdfReader(file_path)
-    model = genai.GenerativeModel("gemini-2.0-flash")
+    model = genai.GenerativeModel(settings.gemini_model)
     docs = []
     for i, page in enumerate(reader.pages):
         try:
@@ -473,7 +473,7 @@ USER QUESTION: {query}
 Provide a comprehensive answer with source citations:"""
 
     try:
-        model = genai.GenerativeModel("gemini-2.0-flash")
+        model = genai.GenerativeModel(settings.gemini_model)
         response = generate_content_with_retry(model, system_prompt, stream=True)
 
         full_text = ""
@@ -533,7 +533,7 @@ Provide your response in this exact JSON format:
 }}"""
 
     try:
-        model = genai.GenerativeModel("gemini-2.0-flash")
+        model = genai.GenerativeModel(settings.gemini_model)
         response = generate_content_with_retry(model, prompt)
         text = response.text.strip()
     except Exception as e:
@@ -595,7 +595,7 @@ Return a comprehensive analysis in this exact JSON format:
 }}"""
 
     try:
-        model = genai.GenerativeModel("gemini-2.0-flash")
+        model = genai.GenerativeModel(settings.gemini_model)
         response = generate_content_with_retry(model, prompt)
         text = response.text.strip()
     except Exception as e:
